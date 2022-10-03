@@ -1,0 +1,20 @@
+.spinner-border {
+  display: inline-block;
+  width: 4rem;
+  height: 4rem;
+  vertical-align: -0.125em;
+  border: 0.85em solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  z-index: 3;
+  -webkit-animation: 0.75s linear infinite spinner-border;
+          animation: 0.95s linear infinite spinner-border;
+}
+
+
+.spinner{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

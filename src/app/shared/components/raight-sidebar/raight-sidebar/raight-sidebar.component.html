@@ -1,0 +1,11 @@
+<div class=" container example-containerd">
+<mat-drawer-container class="mt-5 example-container" >
+  <mat-drawer #drawer mode="side" class="example-sidenav-content">
+    <a class="nav-link mt-5 "  [routerLink]="['/private']"> Private</a><br>
+    <a class="nav-link "  [routerLink]="['/private/tarjeta']"> Administración de Tarjetas</a><br>
+    <a class="nav-link "  [routerLink]="['/private/servicios']"> Administración Servicios</a><br>
+    </mat-drawer>
+        <button (click)="drawer.toggle();">▶️</button>
+        <router-outlet></router-outlet>
+</mat-drawer-container>
+</div>

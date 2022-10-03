@@ -1,0 +1,57 @@
+
+.example-containerd {
+  width: 400px;
+  height: 5vh;
+  display: flex;
+  margin-top: -10px;  
+  margin-left: -30px;
+}
+
+.example-container {
+  height: 100vh;
+  display: flex;
+  padding: 20px;
+  background-color: #333;
+
+}
+
+
+.example-sidenav-content{
+  background-color: #333;
+
+  width: 300px;
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.example-sidenav {
+  padding: 20px;
+}
+
+.nav-link:focus {
+  color:var(--color-secundario);
+}
+.navbar-brand:focus {
+  color:white;
+}
+
+ a{
+    font-size: 14px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color:white;
+    font-weight: 600;
+    background: linear-gradient(currentColor, currentColor);
+    background-position: 100% 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 2px;
+    transition: all 0.5s;
+}
+
+a:hover{
+    cursor: pointer;
+    color:var(--color-secundario);
+    background-size: 50% 2px;
+}

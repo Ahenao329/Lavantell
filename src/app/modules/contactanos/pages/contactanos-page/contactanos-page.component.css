@@ -1,0 +1,36 @@
+h6{
+    text-transform: uppercase;
+    text-align: center;
+}
+
+h3{
+    font-size: 4vw; 
+    font-weight: 600; 
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.card{
+  background-color: var(--color-background);  
+}
+
+
+input.ng-invalid.ng-touched{
+  border:solid 1px red !important
+}
+textarea.ng-invalid.ng-touched{
+  border:solid 1px red !important
+}
+
+/* input.ng-valid.ng-touched{
+    border: solid   2px green !important;
+} */
+
+mat-form-field {
+    margin-right: 12px;
+}
+  
+re-captcha.is-invalid > div {
+    border: 1px solid #dc3545 !important;
+    border-radius: 0.2rem;
+}

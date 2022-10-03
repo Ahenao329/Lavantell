@@ -1,0 +1,21 @@
+.uil{
+    cursor: pointer;
+}
+
+.green-icon{
+    color: #198754 
+}
+
+
+.red-icon{
+    color: #dc3545;
+}
+
+
+input.ng-invalid.ng-touched{
+    border:solid 1px red !important
+}
+
+input.ng-valid.ng-touched{
+    border: solid   2px green !important;
+}

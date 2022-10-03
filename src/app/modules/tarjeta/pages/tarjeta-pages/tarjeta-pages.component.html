@@ -1,0 +1,71 @@
+<div class="container mt-5 md-flex" [@routerTransition]>
+    <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+            <div class="card">
+            <div class="card-body text-center">
+                <h3>Tarjetas </h3>
+            </div>
+        </div>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="titulo text-center"> {{accion | uppercase}} Targeta </h5>
+                    <form [formGroup]="form" (ngSubmit)="guardarTarjeta()">
+                        <div class="input-group input-group-lg mb-3">
+                            <span class="input-group-text" id="basic-addon1"><i class="uil uil-user"></i></span>
+                            <input formControlName="titular" type="text" class="form-control" placeholder="Titualar" aria-label="Username" aria-describedby="basic-addon1">
+                          </div>  
+                          <div class="input-group input-group-lg mb-3">
+                            <span class="input-group-text" id="basic-addon1"><i class="uil uil-credit-card"></i></span>
+                            <input formControlName="numeroTarjeta" type="text" class="form-control" placeholder="Numero Tarjeta" aria-label="Username" aria-describedby="basic-addon1">
+                          </div>  
+                          <div class="row">
+                            <div class="col-lg-7">
+                                <div class="input-group input-group-lg mb-3">
+                                    <span class="input-group-text" id="basic-addon1"><i class="uil uil-calendar-alt"></i></span>
+                                    <input formControlName="feachaExpedicion" type="text" class="form-control" placeholder="MM/YY" aria-label="Username" aria-describedby="basic-addon1" maxlength="5">
+                                  </div>  
+                            </div>
+                            <div class="col-lg-5">
+                                <div class="input-group input-group-lgmb-3">
+                                    <span class="input-group-text" id="basic-addon1"><i class="uil uil-key-skeleton-alt"></i></span>
+                                    <input formControlName="cvv" type="password" class="form-control" placeholder="CVV" aria-label="Username" aria-describedby="basic-addon1" maxlength="3">
+                                  </div>  
+                            </div>
+                          </div>
+                          <div class="d-grid gap-2 text-dark ">
+                          <button [disabled]="form.invalid" type="submit" class=" text-light btn btn-sucess btn-lg bg-success "> <i class="uil uil-database"></i> Aceptar </button>
+                        </div>
+                      </form>
+                </div>
+            </div>
+        </div>  
+        
+        <div class="col-lg-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="titulo text-center">   Listado de  Targeta </h5>
+                    <table class="table">
+                    <body class="">
+                        <tr class="" *ngFor="let tarjeta of listTarget; let i = index">
+                            <td>{{tarjeta.titular}}</td>
+                            <td>{{tarjeta.numeroTarjeta}}</td>
+                            <td>{{tarjeta.feachaExpedicion}}</td>
+                            <td>
+                              <i (click)="editarTarjeta(tarjeta)" class="uil uil-edit text-success"></i>
+                            </td >
+                            <td>
+                                <i (click)="elimarTarjeta(tarjeta.id)"  class="uil uil-trash-alt text-danger"></i>
+                            </td>
+                        </tr>      
+                         <tr>                   
+                </body>
+            </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

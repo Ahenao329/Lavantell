@@ -1,0 +1,143 @@
+i {
+    color: var(--color-secundario)
+}
+
+.nav-link:focus {
+    color:var(--color-secundario);
+  }
+
+.navbar-brand:focus {
+    color:white;
+  }
+
+.sidebar-close{
+
+    display: none;
+}
+
+ a{
+    font-size: 14px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    background: linear-gradient(currentColor, currentColor);
+    background-position: 100% 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 2px;
+    transition: all 0.5s;
+}
+
+a:hover{
+    cursor: pointer;
+    color:var(--color-secundario);
+    background-size: 50% 2px;
+}
+
+
+
+
+@media screen and (max-width: 800px) {
+
+
+* {
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+.sidebar-open{
+    background-color: #333;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.btnsidebar{
+    background-color: #333;
+    color: white;
+    border: 1px solid #555555; 
+    border-radius: 10px;
+}
+
+.btnsidebar:hover{
+    box-shadow: 2px 2px 5px gray;
+} 
+
+.sidebar-slider {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background-color: #333;
+    transform: translateX(-100%);
+    transition: ease-in-out 300ms transform;
+    width: 50%;
+}
+
+.sidebar-slider.sidebar-slide-in {
+    transform: translateX(0%);
+    transition: ease-in-out 600ms transform;
+}
+
+.sidebar-close {
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: #333;
+    cursor: pointer;
+    background-color: white;
+    border: none;
+    margin: 7px;
+    border-radius: 3px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 21px;
+    font-weight: 400;
+    display: flex;
+
+}
+
+.sidebar-content {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    font-size: 16px;
+    padding: 10px;
+    /* height: 100%;  */
+    margin-top:66px;
+    
+}
+
+.set-align{
+    text-align: center;
+}
+
+.set-sidebar-text{
+    padding: 11px;
+}
+
+.set-sidebar-text:hover{
+    background-image: linear-gradient(to right, rgb(150, 218, 250),black);
+    border-left: 10px solid rgb(3, 172, 250);
+    cursor: pointer;
+}
+
+.uili{
+    color: #333;
+}
+}
+
+
+.TituloAPP {
+    color: white;
+    font-weight: normal;
+    margin-left: 37px;
+}

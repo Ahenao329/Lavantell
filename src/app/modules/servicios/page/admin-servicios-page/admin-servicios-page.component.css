@@ -1,0 +1,42 @@
+input.ng-invalid.ng-touched{
+    border:solid 1px red !important
+}
+
+input.ng-valid.ng-touched{
+    border: solid   2px green !important;
+}
+
+
+.uil{
+    cursor: pointer;
+    width: 60vw;
+}
+
+i{
+    width: 60vw;
+height: 50vh;
+
+}
+
+.iconos{
+    display: flex;
+    width: 800px;
+}
+
+button{
+    margin-left: 35px;
+
+}
+
+i {
+
+    font-size: 30px;
+    line-height: 50px;
+}
+
+.blue-snackbar {
+    background: #2196F3;
+  }
+ng-deep .warning{
+    background: white;
+ }

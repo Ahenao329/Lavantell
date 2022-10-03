@@ -1,0 +1,22 @@
+<!-- <img src="https://img.freepik.com/fotos-premium/hombre-caucasico-joven-que-sostiene-cesta-ropa-aislada-fondo-blanco-que-senala-dedo-al-lado_1368-354353.jpg?size=626&ext=jpg&ga=GA1.2.1163744172.1662419346" alt="" class=""> -->
+<!-- <img src="https://img.freepik.com/foto-gratis/manos-sosteniendo-palabra-bienvenida_53876-30956.jpg?w=1380&t=st=1662419527~exp=1662420127~hmac=c00d6aea8d57b9d129d185e402a969bed72d1fa38eaf57ae4b586aa96de20d0b" alt="" class=""> -->
+
+<section id="menu-productos" [@routerTransition]>
+    <div calss="contenedor-principal">
+    <div class="container-fluid  text-center">
+        <div class="slider">
+        <div class="row container-productos no-gutters">
+            <div class="col-12  descripcion-productos" *ngFor="let nosotros of listNosotros; let i = index">
+                <h1>Quiénes somos</h1>
+                <p>{{nosotros.descripcion}}</p>
+           </div>
+           <div class=" col-12 imagen-productos " *ngFor="let nosotros of listNosotros; let i = index">
+            <img src="{{nosotros.imagen}}" alt="">
+             </div>
+         </div>
+         </div>
+     </div>
+    </div>
+</section> 
+
+

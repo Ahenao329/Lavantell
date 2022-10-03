@@ -1,0 +1,32 @@
+ <br>
+ <section [@routerTransition] >
+        <div class="container mt-5 md-flex">
+        <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+            <div class="">
+            <div class=" text-center">
+                    <h1>Servicios </h1>    
+
+            </div>
+        </div>
+        </div>
+    </div>
+    <div class="row mt-4 mt-5"  >
+        <div class=" col-12 col-md-6 col-lg-4" *ngFor="let servicios of listServicios; let i = index">
+            <div class="card">
+                <div class="card-body">
+                        <mat-accordion>    
+                            <mat-expansion-panel (opened)="panelOpenState = true"
+                                                 (closed)="panelOpenState = false">
+                             <mat-expansion-panel-header>            
+                            <td> <h6>{{servicios.titulo }}</h6></td>
+                        </mat-expansion-panel-header>
+                            <td> <p>{{servicios.descripcion}}</p></td>
+                            </mat-expansion-panel>
+                        </mat-accordion>
+                        </div>
+                     </div>                   
+               </div>
+            </div>
+        </div>          
+</section>

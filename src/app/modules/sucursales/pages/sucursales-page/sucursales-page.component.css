@@ -1,0 +1,15 @@
+h6{
+    text-transform: uppercase;
+    text-align: center;
+}
+
+h1{
+    font-size: 4vw; 
+    font-weight: 600; 
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.card{
+  background-color: var(--color-background);  
+}

@@ -1,0 +1,48 @@
+<div *ngIf="!load">
+  <app-spinner></app-spinner>
+  </div>
+  <div *ngIf="load">
+    <div class="container mt-5 md-flex" [@routerTransition]>
+    <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+            <div class="">
+            <div class="card-body text-center">
+                <h3>Contáctanos</h3>
+            </div>
+        </div>
+        </div>
+    </div>
+    <div class="row  mt-5">
+        <div class="col-lg-8 offset-lg-2">
+            <div class="card">
+                <div class="card-body">
+                    <form [formGroup]="form" (ngSubmit)="guardarContacto()">
+                        <div class="input-group input-group-lg mb-3">
+                            <input formControlName="nombre" type="text" class="form-control" placeholder="Nombre" aria-label="Username" aria-describedby="basic-addon1" maxlength="50">
+                          </div>  
+                          <div class="input-group input-group-lg mb-3">
+                            <input formControlName="telefono" type="text" class="form-control" placeholder="Teléfono" aria-label="Username" aria-describedby="basic-addon1">
+                          </div>  
+                             <div class="input-group input-group-lg mb-3">
+                            <input formControlName="correo" type="text" class="form-control" placeholder="Email" aria-label="Username" aria-describedby="basic-addon1" maxlength="30">
+                          </div>
+                          <div class="input-group input-group-lg mb-3">
+                            <input formControlName="direccion" type="text" class="form-control" placeholder="Dirección" aria-label="Username" aria-describedby="basic-addon1">
+                          </div>  
+                           <div class="input-group input-group-lg mb-3">
+                            <input formControlName="ciudad" type="text" class="form-control" placeholder="Ciudad" aria-label="Username" aria-describedby="basic-addon1">
+                          </div>  
+                          <textarea  rows="8"   placeholder="¿Algún mensaje?" type="text" maxlength="500" 
+                          formControlName="mensaje" class="form-control" aria-label="Username" aria-describedby="basic-addon1" ></textarea>
+                          <re-captcha formControlName="recaptchaReactive"></re-captcha>
+                          <div class="d-grid gap-2 text-dark ">
+                          <button [disabled]="form.invalid" type="submit" class=" text-light btn btn-sucess btn-lg bg-success "> <i class="uil uil-database"></i> Enviar </button>
+                        </div>
+                      </form>
+                </div>
+            </div>
+        </div>  
+    </div>
+</div>
+
+</div>

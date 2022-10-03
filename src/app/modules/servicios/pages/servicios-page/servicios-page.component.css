@@ -1,0 +1,30 @@
+section{
+    margin: 10px 3px 30px 5px;
+}
+
+
+h6{
+    /* font-size: 5vw; */
+    /* font-weight: 600; */
+    text-transform: uppercase;
+    text-align: center;
+    color: #005AA7;  
+    color: -webkit-linear-gradient(to right, #FFFDE4, #005AA7);  
+    color: linear-gradient(to right, #FFFDE4, #005AA7); 
+    
+}
+
+h1{
+    font-size: 4vw; 
+    font-weight: 600; 
+    text-transform: uppercase;
+    text-align: center;
+
+}
+
+.card{
+  background-color: var(--color-background);  
+}
+.uil{
+    cursor: pointer;
+}

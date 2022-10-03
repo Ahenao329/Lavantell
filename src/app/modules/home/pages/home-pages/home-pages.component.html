@@ -1,0 +1,14 @@
+<app-side-bar></app-side-bar>
+<app-footrer></app-footrer>
+
+<div *ngIf="estadoLogueado()">
+<app-raight-sidebar></app-raight-sidebar>
+</div>
+
+<div class="home-wrapper" >  
+    <div [@slideInAnimation]>
+        <!-- <div [@routerTransition]> -->
+    <router-outlet name="child"></router-outlet>
+</div>
+</div>
+
