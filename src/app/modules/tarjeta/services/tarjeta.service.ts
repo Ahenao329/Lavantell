@@ -9,7 +9,8 @@ import { environment } from 'src/environments/environment';
 export class TarjetaService {
   private readonly URL = environment.api;
 
-private myAppUrl= 'https://localhost:44343/'
+  // private myAppUrl= 'https://localhost:44343/'
+  private myAppUrl= 'https://lavantell.azurewebsites.net/'
 private myApiUrl= 'api/tarjeta/'
   constructor(private http: HttpClient) { } 
 

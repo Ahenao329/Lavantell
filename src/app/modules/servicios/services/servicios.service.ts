@@ -9,8 +9,7 @@ import { environment } from 'src/environments/environment';
 export class ServiciosService {
 
   private readonly URL = environment.api
-  private myAppUrl= 'https://localhost:44343/'
-private myApiUrl= 'api/servicios/'
+
   constructor(private http: HttpClient) { }
 
   getListServicios():Observable<any>{

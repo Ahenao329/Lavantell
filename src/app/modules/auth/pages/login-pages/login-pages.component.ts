@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LoginService } from '@modules/auth/services/login.service';
 import { routerTransition, slideInAnimation } from 'src/app/app.animation';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-login-pages',
@@ -12,13 +13,14 @@ import { routerTransition, slideInAnimation } from 'src/app/app.animation';
 
 })
 export class LoginPagesComponent implements OnInit {
-
+  load: boolean = true;
   errorSession: boolean = false
   formLogin: FormGroup = new FormGroup({});
 
   constructor(private fb: FormBuilder,
     public apiauth: LoginService,
-    private router: Router){
+    private router: Router,
+    public snackBar: MatSnackBar,){
    if(this.apiauth.usuarioData){
      this.router.navigate(['/','private']);
 
@@ -36,16 +38,23 @@ export class LoginPagesComponent implements OnInit {
 
 
   login() {
+    this.load = false;
     this.apiauth.login( this.formLogin.value).subscribe(response =>{
         if(response.exito==1){
+          this.load = true;
               this.router.navigate(['/','private']);
         }
     },
     err => {
-      this.errorSession = true
-    console.log('Ocurrio error con tu email o password ')
+      this.load = true;
+          this.snackBar.open('Ocurrio error con tu email o password!','🔴🔴',{
+      duration: 2000,
+      panelClass: ['blue-snackbar'],
     });
 
+
+    });
+    
 }
 
 

@@ -16,7 +16,8 @@ const httpOption = {
   providedIn: 'root'
 })
 export class LoginService {
-  url: string = 'https://localhost:44343/api/User/login';
+  // url: string = 'https://localhost:44343/api/User/login';
+  url: string = 'https://lavantell.azurewebsites.net/api/User/login';
   token = ''
 
   private usuarioSubjects: BehaviorSubject<Usuario> = new BehaviorSubject ({email:'', token: ''})
@@ -25,7 +26,7 @@ export class LoginService {
   public get usuarioData(): Usuario { return this.usuarioSubjects.value;}
 
   constructor(private http: HttpClient,
-    private cookie: CookieService) { 
+    private cookie: CookieService) {
       this.usuarioSubjects = new BehaviorSubject<any>( this.cookie.getAll())
       this.usuario = this. usuarioSubjects.asObservable();
     }
@@ -38,7 +39,9 @@ export class LoginService {
           const usuario: Usuario = res.data;
           console.log('Session iniciada correctamente', 'ResponseOK');
           this.token = usuario.token
-          this.cookie.set('token',this.token, 0.01, 'http://localhost:4200/private', 'localhost', true, 'Strict' ) 
+          // this.cookie.set('token',this.token, 0.01, 'http://localhost:4200/private', 'localhost', true, 'Strict' )
+          // this.cookie.set('token',this.token, 0.01,)
+          this.cookie.set('token',this.token, 0.01, 'https://lavantellsas.azurewebsites.net/private', )
 
          // localStorage.setItem('usuario', JSON.stringify(usuario));
           // this.usuarioSubjects.next(usuario);

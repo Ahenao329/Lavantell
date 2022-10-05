@@ -82,14 +82,14 @@ export class AdminServiciosPageComponent implements OnInit {
           this.id = undefined;
           this.snackBar.open('Se actualizo el servicio correctamente','👌',{
             duration: 2000,
-            verticalPosition: 'top',
+            verticalPosition: 'bottom',
             panelClass: ['warning']
           });
           this.obtenerServicios();
         }, error => {
           this.snackBar.open('ERROR al intentar actualizar el servicio, consulte con el administrador','🔴🔴',{
             duration: 2000,
-            verticalPosition: 'top',
+            verticalPosition: 'bottom',
             panelClass: ['warning']
           });       
          })

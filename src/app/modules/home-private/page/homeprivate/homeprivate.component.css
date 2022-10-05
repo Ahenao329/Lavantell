@@ -45,6 +45,7 @@ h1{
         background:  var(--color-background);
         background: linear-gradient(90deg, rgba(23, 23, 26, 1)) 44%, rgb(24, 24, 24, 1);
         min-height: 100vh;
+        
     }
 }
 
@@ -60,6 +61,8 @@ h1{
     .home-wrapper{
 
         margin: 0 0 50% 2.8rem;
+        margin-left: 0%;
+
 
     }
     

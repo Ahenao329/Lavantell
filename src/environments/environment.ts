@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  api: 'https://localhost:44343/api'
+  // api: 'https://localhost:44343/api'
+  api: 'https://lavantell.azurewebsites.net/api'
 
 };
 

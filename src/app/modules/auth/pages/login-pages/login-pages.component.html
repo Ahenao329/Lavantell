@@ -1,4 +1,9 @@
-<div class="container login-auth-page" [@routerTransition]>
+<div *ngIf="!load">
+    <app-spinner></app-spinner>
+    </div>
+    <div *ngIf="load">
+        
+        <div class="container login-auth-page" [@routerTransition]>
 <mat-card class=" login-auth-page bg-secondary">
     <a class="navbar-brand " routerLink="/inicio" >
        <h1> <i class="uil uil-water">&nbsp;</i>Lavantell🧼
@@ -28,4 +33,5 @@
     </form>
     </mat-card-content>
 </mat-card>
+</div>
 </div>
