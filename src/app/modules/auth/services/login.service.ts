@@ -41,7 +41,7 @@ export class LoginService {
           this.token = usuario.token
           // this.cookie.set('token',this.token, 0.01, 'http://localhost:4200/private', 'localhost', true, 'Strict' )
           // this.cookie.set('token',this.token, 0.01,)
-          this.cookie.set('token',this.token, 0.01, 'https://lavantellsas.azurewebsites.net/private', )
+          this.cookie.set('token',this.token, 0.01, 'https://lavantells.azurewebsites.net/private', )
 
          // localStorage.setItem('usuario', JSON.stringify(usuario));
           // this.usuarioSubjects.next(usuario);

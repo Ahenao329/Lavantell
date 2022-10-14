@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { LoginService } from '@modules/auth/services/login.service';
 import { routerTransition, slideInAnimation } from 'src/app/app.animation';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { errorMessages, regExps } from '@core/util/Validaciones.service';
 
 @Component({
   selector: 'app-login-pages',
@@ -15,7 +16,9 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class LoginPagesComponent implements OnInit {
   load: boolean = true;
   errorSession: boolean = false
-  formLogin: FormGroup = new FormGroup({});
+  formLogin: any; 
+  errors = errorMessages;
+
 
   constructor(private fb: FormBuilder,
     public apiauth: LoginService,
@@ -30,9 +33,14 @@ export class LoginPagesComponent implements OnInit {
     this.formLogin = this.fb.group({
       email: ['',Validators.compose([
         Validators.required,
-        Validators.email
+        Validators.minLength(5),
+        Validators.maxLength(100),
+        Validators.pattern(regExps['email'])
   ])],
-      password: ['', Validators.required]
+      password: ['', Validators.compose([
+        Validators.required,
+        Validators.maxLength(50),
+    ])]
       });
   }
 
@@ -56,6 +64,30 @@ export class LoginPagesComponent implements OnInit {
     });
     
 }
+// marcarControlesParaValidacion(userForm: FormGroup) {
+//   try {
+//     (<any>Object).values(userForm.controls).forEach(constrol => {
+//       control.markAsTouched();
+//       control.markAsDirty();
+//     });
+//   } catch (error) {
+//   }
+// }
 
+// async onLoggedin() {
+//   this.marcarControlesParaValidacion(this.formLogin);
+//   if (this.formLogin.valid) {
+//       this.blockUI.start();
+//       try {
+//           Object.assign(this.usuario, this.formLogin.value);
+//           await this._usuarioLoginService.login(this.usuario, true);//Que guarde credenciales en localStorage, solo si es desarrollo
 
+//           this.router.navigate(['/' + AppConfig.routes.Inicio]);
+//       }
+//       catch (e) {
+//           this.manejoExcepcion(e);
+//       } finally {
+//           this.blockUI.stop();
+//       }
+//   }
 }

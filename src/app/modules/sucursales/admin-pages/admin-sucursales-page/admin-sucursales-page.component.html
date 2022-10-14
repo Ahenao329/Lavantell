@@ -1,0 +1,157 @@
+<section class="ibox">
+  <div class="container mt-5 md-flex s" [@routerTransition]>
+    <div class="row">
+      <div class="col-6">
+     <h5 class="titulo text-start"> <i class="uil uil-clipboard-alt"></i> Listado de  Servicios </h5>
+    </div>  <!-- <br> -->
+    <div class="col-6 justify-content-end">
+           <div class="ibox-title mt-5  ">
+             <!-- <h5 class="titulo text-center">   Listado de  Servicios </h5> -->
+              <div class="pull-right" style="margin-top: -30px;" >
+                <button type="button" class="btn btn-primary btnListado btn-sm ju " (click)="openAdd()" style="margin-top: -15px;">
+                  <i class="uil uil-plus"></i>
+                                       Agregar
+                 </button>
+              </div>
+         </div>
+        </div>
+      </div>
+        <div class="ibox-content">
+          <div class="row m-b-sm m-t-sm justify-content-center">
+
+            <div class="col-md-12 ">
+      
+              <div class="input-group mb-2" *ngIf="showSearchControl">
+                <span class="input-group-btn">
+                  <button type="button" class="btn btn-white btn-primary btn-white btn-sm " (click)="clearSearch()">
+                    <i class="uil uil-sync"></i>
+                  </button>
+                </span>
+                <!-- <select [(ngModel)]="searchField" name="CampoBusqueda" placeholder="Campo de búsqueda" class="ui fluid search selection dropdown ">
+                  <option *ngFor="let item of fields" [value]="item.name">
+                    {{item.display}}
+                  </option>
+                </select> -->
+                <div class="search-component">
+                  <input type="text" placeholder="Search.." [(ngModel)]="filterPost">
+                  <br>
+              </div>
+                <!-- <app-search (callbackData)="recivieData($event)"></app-search> -->
+                <!-- <input type="text" placeholder="Buscar" class="input-sm form-control searchControlSS" type="search" name="searchControl"
+                  #searchControl="ngModel" [(ngModel)]="searchText.value" maxlength="50" results="5" (keypress)="searchOnKeyPress($event)"
+                  appTextHelper /> -->
+                <span class="input-group-btn">
+                  <button type="button" class="btn btn-sm btn-primary  btn-white btnListado" (click)="search()">
+                    <i class="uil uil-search"></i>
+                  </button>
+                </span>
+                <!-- <div class="pull-right" style="margin-left: -30px;" >
+                  <button type="button" class="btn btn-primary btnListado btn-sm ju " (click)="openAdd()" style="margin-left: -5px;">
+                      <span class="fa fa-plus"></span>
+                       Agregar
+                   </button>
+                </div> -->
+              </div>
+
+            </div>
+      
+            <!-- <div class="col-md-6">
+              <div class="pull-right">
+                <div style="display: inline-block;" *ngIf="paginador.totalRegistros > 0">
+                  <span>Viendo
+                    <b>{{paginador.primerRegistro}}</b>–
+                    <b>{{paginador.ultimoRegistro}}</b>&nbsp;de&nbsp;
+                    <b>{{paginador.totalRegistros}}</b>
+                  </span>
+                  <div class="btn-group btn-group-sm">
+                    <button type="button" class="btn btn-primary btnPaginador" (click)="pageChanged(paginador.paginaActual - 1)"
+                      [disabled]="paginador.primerRegistro <= 1">
+                      <span class="fa fa-chevron-left"></span>
+                    </button>
+                    <button type="button" class="btn btn-primary btnPaginador" (click)="pageChanged(paginador.paginaActual + 1)"
+                      [disabled]="paginador.ultimoRegistro >= paginador.totalRegistros">
+                      <span class="fa fa-chevron-right"></span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+          </div>     
+         
+    <div class="table-responsive">
+        <table class="table table-dark table-striped">
+                      <thead>
+                         <tr>
+                            <th style="width: 5%;" class="text-center">#</th>
+                             <th *ngFor="let f of fields" (click)="changeSort('f.display')">{{f.display}}</th>
+                             <th style="width: 5%;" class="text-center">Acciones</th>
+                            </tr>
+                           </thead>
+                           <tbody >
+                              <tr *ngFor="let d of data | filterPipe: filterPost  | orderList:optionSort.property:optionSort.order ; let i = index">
+                                 <td class="text-center">{{1 + i}}</td>
+
+                               <td *ngFor="let f of fields">
+                                  
+                                  <div *ngIf="f.link">
+                                     <div *ngIf="(f.formatter && f.formatter.length > 0)">
+                                      <a class="" (click)="openEdit(d)">
+                                         <span [innerHtml]="">  {{d.nombre }}   </span><!--El datto 1 se lo pasamos a al pipe-->
+                                     </a>                
+                                      </div>
+                                    </div>
+                                <div *ngIf="( f.name == 'telefono')">
+                                        <span class="text-navy" (click)="openEdit(d)">{{d.telefono}}</span>
+                                      </div>
+                                      <div *ngIf="( f.name == 'direccion')">
+                                        <span class="text-navy" (click)="openEdit(d)">{{d.direccion}}</span>
+                                      </div>
+                                      <div *ngIf="( f.name == 'horario')">
+                                        <span class="text-navy" (click)="openEdit(d)">{{d.horario}}</span>
+                                      </div>
+                                      <div *ngIf="( f.name == 'administrador')">
+                                        <span class="text-navy" (click)="openEdit(d)">{{d.administrador}}</span>
+                                      </div> 
+                                    </td>
+                                   <td> <button mat-raised-button class="bg-light" (click)="eliminarSucursal(d.id)">
+                                      <i   class="uil uil-trash-alt text-danger"></i>
+                                   </button></td>
+                                   </tr>
+                                
+                         </tbody>
+         </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+                              <!-- <div class="row mt-4 mt-5"  >
+                                <div class=" col-12 col-md-6 col-lg-6" *ngFor="let sucursal of data; let i = index">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <mat-accordion>    
+                                  <div class="container  mt-3">
+                                        <button mat-raised-button color="basic" (click)="openEdit(sucursal)">
+                                            <i  class="uil uil-edit text-success"></i></button>
+                                        <button mat-raised-button color="basic" (click)="eliminarSucursal(sucursal.id)">
+                                           <i   class="uil uil-trash-alt text-danger"></i>
+                                        </button>
+                                    </div>
+                                           <mat-expansion-panel (opened)="panelOpenState = true"
+                                                                (closed)="panelOpenState = false">
+                                           <mat-expansion-panel-header>            
+                                                <td> <h6>{{sucursal.nombre }}</h6></td>
+                                            </mat-expansion-panel-header>
+                                            <td> <p>{{sucursal.telefono}}</p></td>
+                                            <td> <p>{{sucursal.direccion}}</p></td>
+                                            <td> <p>{{sucursal.horario}}</p></td>
+                                            <td> <p>{{sucursal.administrador}}</p></td>
+                                        </mat-expansion-panel>
+                                            </mat-accordion>
+                                                </div>
+                                             </div>                   
+                                       </div>
+                                    </div>  -->

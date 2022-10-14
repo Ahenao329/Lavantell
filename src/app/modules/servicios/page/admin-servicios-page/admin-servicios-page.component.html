@@ -1,9 +1,9 @@
-<div class="container mt-5 md-flex" [@routerTransition]>
+    <div class="container mt-5 md-flex s" [@routerTransition]>
     <div class="row">
         <div class="col-lg-8 offset-lg-2">
             <div class="card">
             <div class="card-body text-center">
-                <h3>Servicios </h3>
+                <h3>Servicios</h3>
             </div>
         </div>
         </div>
@@ -37,16 +37,18 @@
                     <div class="row mt-4 mt-5"  >
                         <div class=" col-12 col-md-6 col-lg-6" *ngFor="let servicios of listServicios; let i = index">
                             <div class="card">
-                              <div class="container iconos mt-3">
-                                <button mat-raised-button color="basic" (click)="editarServicio(servicios)"><i  class="uil uil-edit text-success"></i></button>
-                                <button mat-raised-button color="basic" (click)="eliminarServicio(servicios.id)">                                <i   class="uil uil-trash-alt text-danger"></i>
-                                </button>
-                            </div>
                                 <div class="card-body">
                                     <mat-accordion>    
-                                        <mat-expansion-panel (opened)="panelOpenState = true"
-                                                             (closed)="panelOpenState = false">
-                                         <mat-expansion-panel-header>            
+                          <div class="container  mt-3">
+                                <button mat-raised-button color="basic" (click)="editarServicio(servicios)">
+                                    <i  class="uil uil-edit text-success"></i></button>
+                                <button mat-raised-button color="basic" (click)="eliminarServicio(servicios.id)">
+                                   <i   class="uil uil-trash-alt text-danger"></i>
+                                </button>
+                            </div>
+                                   <mat-expansion-panel (opened)="panelOpenState = true"
+                                                        (closed)="panelOpenState = false">
+                                   <mat-expansion-panel-header>            
                                         <td> <h6>{{servicios.titulo }}</h6></td>
                                     </mat-expansion-panel-header>
                                         <td> <p>{{servicios.descripcion}}</p></td>

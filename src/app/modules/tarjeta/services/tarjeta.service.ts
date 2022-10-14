@@ -10,6 +10,8 @@ export class TarjetaService {
   private readonly URL = environment.api;
 
   // private myAppUrl= 'https://localhost:44343/'
+  // api: 'https://lavantell.azurewebsites.net/api'
+
   private myAppUrl= 'https://lavantell.azurewebsites.net/'
 private myApiUrl= 'api/tarjeta/'
   constructor(private http: HttpClient) { } 

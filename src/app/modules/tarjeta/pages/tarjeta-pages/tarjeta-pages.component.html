@@ -1,4 +1,4 @@
-<div class="container mt-5 md-flex" [@routerTransition]>
+<div class="container mt-5 md-flex s" [@routerTransition]>
     <div class="row">
         <div class="col-lg-8 offset-lg-2">
             <div class="card">
@@ -12,7 +12,7 @@
         <div class="col-lg-6">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="titulo text-center"> {{accion | uppercase}} Targeta </h5>
+                    <h5 class="titulo text-center"> {{accion | uppercase}} Tarjeta </h5>
                     <form [formGroup]="form" (ngSubmit)="guardarTarjeta()">
                         <div class="input-group input-group-lg mb-3">
                             <span class="input-group-text" id="basic-addon1"><i class="uil uil-user"></i></span>
@@ -47,7 +47,7 @@
         <div class="col-lg-6">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="titulo text-center">   Listado de  Targeta </h5>
+                    <h5 class="titulo text-center">   Listado de  Tarjeta </h5>
                     <table class="table">
                     <body class="">
                         <tr class="" *ngFor="let tarjeta of listTarget; let i = index">

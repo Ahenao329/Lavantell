@@ -31,6 +31,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatCardModule,
     FormsModule,
     ReactiveFormsModule,
-  ]
+  ],
 })
 export class AuthModule { }

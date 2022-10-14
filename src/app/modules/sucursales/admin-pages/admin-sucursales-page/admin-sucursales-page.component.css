@@ -1,0 +1,98 @@
+section{
+    margin: 10px 3px 80% 43px;
+}
+  mat-dialog-container {
+    background-color: transparent !important;
+    padding: 0px 0px 0px 0px !important;
+    overflow: hidden !important;
+  }
+  h6{
+      text-transform: uppercase;
+      text-align: center;
+  }
+  
+  h1{
+      font-size: 4vw; 
+      font-weight: 600; 
+      text-transform: uppercase;
+      text-align: center;
+  }
+  
+  .card{
+    background-color: var(--color-background);  
+  }
+  
+  /* @media screen and (max-width: 741px) {
+    section{
+      margin: 50px 3px 90% 5px;
+      margin-top: 20%;
+      margin-right: 60%;
+  
+  }
+  } */
+  
+  /* @media screen and (max-width: 441px) {
+    section{
+        margin: 10px 3px 100% 5px;
+        margin-top: 25%;
+  
+    }
+  } */
+/* 
+  .table-responsive {
+  
+          display: block;
+          width: 100%;
+          overflow-x: auto;
+          -webkit-overflow-scrolling: touch;
+          -ms-overflow-style: -ms-autohiding-scrollbar; 
+
+  }
+
+  .table-bordered {
+    border: 0;
+  }
+
+  button {
+    display: inline-block;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    user-select: none;
+    position: end;
+    background-color: var(--color-secundario);
+    color: black;
+  }*/
+
+  a{
+    cursor: pointer;
+    color: var(--color-secundario);
+  }
+
+
+
+/* .search-component {
+  padding: 0 1.5rem;
+} */
+
+.search-component input {
+  border: 0;
+  border-radius: 3rem;
+  height: 30px;
+  width: 20rem;
+  padding: 0 .75rem;
+  font-size: 90%;
+} 
+
+.pull-right{
+  padding: 0 0 0 70%;
+
+}
+
+
+@media screen and  (max-width: 841px){
+  .pull-right{
+    padding: 0 0 0 0;
+  
+  }
+}

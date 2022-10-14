@@ -13,24 +13,32 @@ import { routerTransition, slideInAnimation } from 'src/app/app.animation';
 })
 export class SucursalesPageComponent implements OnInit {
   listSucursales: Array<SucursalesModel> = []
-  load: boolean = false;
   panelOpenState = false;
 
-  constructor( private _sucursalesService: SucursalesService,  private cookieService: CookieService) { }
+  constructor( private _sucursalesService: SucursalesService) { }
 
   ngOnInit(): void {  
     this.obtenerSucursales();
   }
 
 
+  // obtenerSucursales(){
+  //   this._sucursalesService.getSucursales()
+  //   .subscribe((data: SucursalesModel[])=> {
+  //      this.listSucursales = data 
+  //   }, error => {
+  //     console.log(error)
+  //   }
+  //   )
+  // }
+
   obtenerSucursales(){
     this._sucursalesService.getSucursales()
-    .subscribe((data: SucursalesModel[])=> {
-       this.listSucursales = data 
+    .subscribe(data=> {
+       this.listSucursales = data.data 
     }, error => {
       console.log(error)
     }
     )
   }
-
 }

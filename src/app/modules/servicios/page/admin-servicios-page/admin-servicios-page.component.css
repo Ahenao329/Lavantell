@@ -40,3 +40,23 @@ i {
 ng-deep .warning{
     background: white;
  }
+
+ @media screen and (max-width: 741px) {
+    .s{
+        margin-left: 5%;
+
+        /* margin: 10px 3px 30px 5px; */
+        /* margin: 10px 10% 100% 10%; */
+        /* margin-left: 20%; */
+        /* margin-right: -90%; */
+    }
+}
+
+@media screen and (max-width: 441px) {
+    .s{
+        /* margin: 10px 3px 30px 5px; */
+        /* margin: 10px 3px 100% 5px; */
+        margin-left: 20%;
+        /* margin-right: -90%; */
+    }
+}

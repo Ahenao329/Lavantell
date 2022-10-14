@@ -1,7 +1,15 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { Response } from '@core/models/response';
+import { SucursalesModel } from '@core/models/sucursales.model';
+
+const httpOption = {
+  headers: new HttpHeaders({
+    'Contend-Type': 'application/json'
+  })
+};
 
 @Injectable({
   providedIn: 'root'
@@ -13,9 +21,39 @@ private readonly URL = environment.api
 
 
 
-  getSucursales():Observable<any>  {
-    return this.http.get(`${this.URL}/sucursales`)
+  // getSucursales():Observable<any>  {
+  //   return this.http.get(`${this.URL}/sucursales`)
+  // }
 
+  getSucursales():Observable<Response>  {
+    return this.http.get<Response>(`${this.URL}/sucursales`)
+  }
+  
+  getSucursales2(term: string):Observable<Response>  {
+    return this.http.get<Response>(`${this.URL}/sucursales?src=${term}`)
   }
 
+  deleteSucursales(id:number): Observable<any>
+  {
+    return this.http.delete(`${this.URL}/sucursales/` + id)
+  }
+
+  saveSucursales(sucursal: any): Observable<any> {
+    return this.http.post(`${this.URL}/sucursales/`, sucursal)
+  }
+
+  add(sucursal: SucursalesModel): Observable<Response>{
+    return this.http.post<Response>(`${this.URL}/sucursales/`, sucursal, httpOption);
+  }
+
+  // updateSucursales(id: number, sucursal: any){
+  //   return this.http.put(`${this.URL}/sucursales/` + id, sucursal)
+  // }
+  updateSucursales(id: number, sucursal: any): Observable<Response>{
+    return this.http.put<Response>(`${this.URL}/sucursales/` + id, sucursal, httpOption)
+  }
+
+  edit(sucursal: SucursalesModel): Observable<Response>{
+    return this.http.put<Response>(`${this.URL}/sucursales/`, sucursal, httpOption);
+  }
 }

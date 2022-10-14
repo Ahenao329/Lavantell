@@ -5,6 +5,7 @@ import { ContactanosService } from '@modules/contactanos/services/contactanos.se
 import { routerTransition, slideInAnimation } from 'src/app/app.animation';
 
 import { ToastrService } from 'ngx-toastr';
+import { errorMessages, regExps } from '@core/util/Validaciones.service';
 
 
 
@@ -15,9 +16,11 @@ import { ToastrService } from 'ngx-toastr';
   animations: [routerTransition(), slideInAnimation]
 })
 export class ContactanosPageComponent implements OnInit {
-  form: FormGroup;
+  form: any;
   listTarget: Array<ContactanosModel> =  [];
-    load: boolean = true;
+  load: boolean = true;
+  errors = errorMessages;
+
 
   constructor(
     private toastr: ToastrService,
@@ -28,26 +31,29 @@ export class ContactanosPageComponent implements OnInit {
       this.form= this.formContactos.group({
         nombre:  ['',Validators.compose([
                       Validators.required,  
-                    Validators.minLength(6),
+                    Validators.minLength(3),
                     Validators.maxLength(40)])],
         telefono: ['',Validators.compose([
                          Validators.required,  
-                        Validators.minLength(6),
-                        Validators.maxLength(12)])],
+                        Validators.minLength(10),
+                        Validators.maxLength(10),
+                        Validators.pattern(regExps['Telefono'])
+
+                      ])],
         correo: ['',Validators.compose([
                           Validators.required, 
                           Validators.email,
                         Validators.minLength(5),
-                        Validators.maxLength(50)])],
+                        Validators.maxLength(50),
+                        Validators.pattern(regExps['email'])
+                      ])],
         direccion: ['',Validators.compose([
-                      Validators.minLength(9),
-                      Validators.maxLength(30)])],
+                      Validators.maxLength(50)])],
        ciudad: ['',Validators.compose([
-                      Validators.minLength(3),
                       Validators.maxLength(30)])],
         mensaje: ['',Validators.compose([
                         Validators.required,  
-                      Validators.maxLength(300)])],
+                      Validators.maxLength(500)])],
         recaptchaReactive: ['', Validators.required]
       })
     }

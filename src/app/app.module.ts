@@ -19,6 +19,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginPagesComponent } from '@modules/auth/pages/login-pages/login-pages.component';
 import { JwtInterceptor } from './security/jwt.interceptor';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,9 @@ import { JwtInterceptor } from './security/jwt.interceptor';
     
   ],
   providers: [CookieService,  
-    {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true }],
+    {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    {provide: LocationStrategy,useClass: HashLocationStrategy}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

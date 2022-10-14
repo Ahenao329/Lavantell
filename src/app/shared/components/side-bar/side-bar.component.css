@@ -141,3 +141,8 @@ a:hover{
     font-weight: normal;
     margin-left: 37px;
 }
+
+button{
+    background-color:var(--color-secundario);
+  
+  }

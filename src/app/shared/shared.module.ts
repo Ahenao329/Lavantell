@@ -13,6 +13,12 @@ import { RaightSidebarComponent } from './components/raight-sidebar/raight-sideb
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatIconModule} from '@angular/material/icon';
 import {MatDividerModule} from '@angular/material/divider';
+import { GridComponent } from './components/grid/grid.component';
+import { DynamicPipe } from './components/grid/dynamic.pipes';
+import { OrderListPipe } from './pipe/order-list.pipe';
+import { SearchComponent } from './components/search/search.component';
+import { FormsModule } from '@angular/forms';
+import { FilterPipePipe } from './pipe/filter-pipe.pipe';
 
 
 
@@ -21,7 +27,12 @@ import {MatDividerModule} from '@angular/material/divider';
     SideBarComponent,
     FootrerComponent,
     SpinnerComponent,
-    RaightSidebarComponent
+    RaightSidebarComponent,
+    GridComponent,
+    DynamicPipe,
+    OrderListPipe,
+    SearchComponent,
+    FilterPipePipe
   ],
   imports: [
     RecaptchaV3Module,
@@ -35,6 +46,7 @@ import {MatDividerModule} from '@angular/material/divider';
     MatSidenavModule,
     MatIconModule,
     MatDividerModule,
+    FormsModule,
 
 
     ],
@@ -43,6 +55,10 @@ import {MatDividerModule} from '@angular/material/divider';
     FootrerComponent,
     SpinnerComponent,
     RaightSidebarComponent,
+    GridComponent,
+    OrderListPipe,
+    SearchComponent,
+    FilterPipePipe,
     ],
     providers: [
       {

@@ -1,5 +1,6 @@
 section{
-    margin: 10px 3px 30px 5px;
+    margin: 10px 3px 0px 5px;
+    /* margin: 10px 3px 90% 5px; */
 }
 
 
@@ -27,4 +28,20 @@ h1{
 }
 .uil{
     cursor: pointer;
+}
+
+@media screen and (max-width: 741px) {
+    section{
+        /* margin: 10px 3px 30px 5px; */
+        margin: 10px 3px 90% 5px;
+                margin-top: 70px;
+
+    }
+}
+
+@media screen and (max-width: 441px) {
+    section{
+        /* margin: 10px 3px 30px 5px; */
+        margin: 10px 3px 100% 5px;
+    }
 }

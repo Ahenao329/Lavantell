@@ -2,6 +2,7 @@
   <app-spinner></app-spinner>
   </div>
   <div *ngIf="load">
+  <section>
     <div class="container mt-5 md-flex" [@routerTransition]>
     <div class="row">
         <div class="col-lg-8 offset-lg-2">
@@ -16,11 +17,103 @@
         <div class="col-lg-8 offset-lg-2">
             <div class="card">
                 <div class="card-body">
-                    <form [formGroup]="form" (ngSubmit)="guardarContacto()">
-                        <div class="input-group input-group-lg mb-3">
+                    <form [formGroup]="form" novalidate (ngSubmit)="guardarContacto()">      
+                      
+                      <div class="form-group input input-group input-group-lg mb-3 mt-5">
+                        <mat-form-field   class="col-md-12 text-center my-form-field" style="height: 40px;">
+                        <input clas="input" type="text"  formControlName="nombre"  matInput placeholder="Nombre" maxlength="50"> 
+                          <mat-error *ngFor="let validation of errors.Requerido5_50">
+                            <mat-error class="error-message"
+                            *ngIf="form.get('nombre').hasError(validation.type) && (form.get('nombre').dirty || form.get('nombre').touched)">
+                            {{validation.message}}
+                                </mat-error>
+                        </mat-error>
+                      </mat-form-field>
+                    </div>
+                    <div class="form-group input input-group input-group-lg mb-3 mt-5">
+                      <mat-form-field   class="col-md-12 text-center my-form-field" style="height: 40px;">
+                        <input clas="input" type="text"  formControlName="telefono"  matInput placeholder="Teléfono" maxlength="10"> 
+                          <mat-error *ngFor="let validation of errors.Telefono">
+                              <mat-error class="error-message"
+                              *ngIf="form.get('telefono').hasError(validation.type) && (form.get('telefono').dirty || form.get('telefono').touched)">
+                              {{validation.message}}
+                                  </mat-error>
+                          </mat-error>
+                      </mat-form-field>
+                    </div>
+                    <div class="form-group input input-group input-group-lg mb-3 mt-5">
+                      <mat-form-field   class="col-md-12 text-center my-form-field" style="height: 40px;">
+                          <input clas="input" type="text"  formControlName="correo"  matInput placeholder="Correo electrónico" maxlength="100"> 
+                          <mat-error *ngFor="let validation of errors.emailSeguridad">
+                            <mat-error class="error-message"
+                            *ngIf="form.get('correo').hasError(validation.type) && (form.get('correo').dirty || form.get('correo').touched)">
+                            {{validation.message}}
+                                </mat-error>
+                        </mat-error>
+                      </mat-form-field>
+                    </div>
+                    <div class="form-group input input-group input-group-lg mb-3 mt-5">
+                      <mat-form-field   class="col-md-12 text-center my-form-field" style="height: 40px;">
+                          <input clas="input" type="text"  formControlName="direccion"  matInput placeholder="Dirección" maxlength="50"> 
+                          <mat-error *ngFor="let validation of errors.No_requerido50">
+                            <mat-error class="error-message"
+                            *ngIf="form.get('direccion').hasError(validation.type) && (form.get('direccion').dirty || form.get('direccion').touched)">
+                            {{validation.message}}
+                                </mat-error>
+                        </mat-error>
+                      </mat-form-field>
+                    </div>
+                    <div class="form-group input input-group input-group-lg mb-3 mt-5">
+                      <mat-form-field   class="col-md-12 text-center my-form-field" style="height: 40px;">
+                        <input clas="input" type="text"  formControlName="ciudad"  matInput placeholder="Ciudad" maxlength="30"> 
+                          <mat-error *ngFor="let validation of errors.No_requerido30">
+                            <mat-error class="error-message"
+                            *ngIf="form.get('ciudad').hasError(validation.type) && (form.get('ciudad').dirty || form.get('ciudad').touched)">
+                            {{validation.message}}
+                                </mat-error>
+                        </mat-error>
+                    </mat-form-field>
+                  </div>
+                  <div class="form-group input input-group input-group-lg mb-3 mt-5">
+                    <mat-form-field  class="input input-group input-group-lg mb-3">
+                      <textarea rows="5" clas="input" type="text"  formControlName="mensaje"  matInput placeholder="¿Algún mensaje?" maxlength="500"></textarea>
+                        <mat-error *ngFor="let validation of errors.TextArea500">
+                          <mat-error class="error-message"
+                          *ngIf="form.get('mensaje').hasError(validation.type) && (form.get('mensaje').dirty || form.get('mensaje').touched)">
+                          {{validation.message}}
+                              </mat-error>
+                      </mat-error>
+                    </mat-form-field>
+                  </div>
+                    <re-captcha class="re-captcha"  formControlName="recaptchaReactive"></re-captcha>    
+                    <div class="d-grid gap-2 text-dark  ">
+                      <button [disabled]="form.invalid" type="submit" class=" text-light btn btn-sucess btn-lg bg-success "> <i class="uil uil-database"></i> Enviar </button>
+                    </div>
+                  </form>
+                </div>
+            </div>
+        </div>  
+    </div>
+</div>
+</section>
+</div>
+
+
+
+                      <!-- <div class="">
+                          <mat-form-field  class="input input-group input-group-lg mb-3">
                             <input formControlName="nombre" type="text" class="form-control" placeholder="Nombre" aria-label="Username" aria-describedby="basic-addon1" maxlength="50">
-                          </div>  
-                          <div class="input-group input-group-lg mb-3">
+                            <mat-error *ngFor="let validation of errors.Requerido5_50">
+                              <mat-error class="error-message"
+                              *ngIf="form.get('nombre').hasError(validation.type) && (form.get('nombre').dirty || form.get('nombre').touched)">
+                              {{validation.message}}
+                                  </mat-error>
+                          </mat-error>
+  
+                          </mat-form-field>
+                         </div>   -->
+                          
+                          <!-- <div class="input-group input-group-lg mb-3">
                             <input formControlName="telefono" type="text" class="form-control" placeholder="Teléfono" aria-label="Username" aria-describedby="basic-addon1">
                           </div>  
                              <div class="input-group input-group-lg mb-3">
@@ -34,15 +127,8 @@
                           </div>  
                           <textarea  rows="8"   placeholder="¿Algún mensaje?" type="text" maxlength="500" 
                           formControlName="mensaje" class="form-control" aria-label="Username" aria-describedby="basic-addon1" ></textarea>
-                          <re-captcha formControlName="recaptchaReactive"></re-captcha>
-                          <div class="d-grid gap-2 text-dark ">
+                          <re-captcha class="re-captcha"  formControlName="recaptchaReactive"></re-captcha>
+                          <div class="d-grid gap-2 text-dark  ">
                           <button [disabled]="form.invalid" type="submit" class=" text-light btn btn-sucess btn-lg bg-success "> <i class="uil uil-database"></i> Enviar </button>
-                        </div>
-                      </form>
-                </div>
-            </div>
-        </div>  
-    </div>
-</div>
+                        </div> -->
 
-</div>

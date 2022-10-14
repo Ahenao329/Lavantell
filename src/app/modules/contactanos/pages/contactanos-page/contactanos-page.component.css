@@ -1,3 +1,7 @@
+section{
+  margin-top: 70px;
+
+}
 h6{
     text-transform: uppercase;
     text-align: center;
@@ -15,12 +19,12 @@ h3{
 }
 
 
-input.ng-invalid.ng-touched{
+/* input.ng-invalid.ng-touched{
   border:solid 1px red !important
 }
 textarea.ng-invalid.ng-touched{
   border:solid 1px red !important
-}
+} */
 
 /* input.ng-valid.ng-touched{
     border: solid   2px green !important;
@@ -34,3 +38,73 @@ re-captcha.is-invalid > div {
     border: 1px solid #dc3545 !important;
     border-radius: 0.2rem;
 }
+
+@media screen and (max-width: 741px) {
+  section{
+      /* margin: 70px 3px 90% 5px; */
+      margin: 70px 0px 90% ;
+      margin-top: 70px;
+  }
+  re-captcha.is-invalid > div {
+    border: 1px solid #dc3545 !important;
+    border-radius: 0.2rem;
+    width: -90%;
+    transform: scale(0.84);
+    transform-origin: 0 0;
+}
+/* .re-captcha {
+  size: 5%;
+  transform: scale(1.08);
+  transform-origin: 0 0;
+} */
+.input{
+  margin-top: 50%;
+}
+}
+
+/* @media screen and (max-width: 441px) {
+  section{
+      margin: 70px -45px 90% 5px;
+  }
+} */
+
+.g-recaptcha{
+  transform:scale(2.77rem);
+  -webkit-transform:scale(2.77);
+  transform-origin: 50% -30%;
+  -webkit-transform-origin:0 0;
+  }
+  .form-group {
+    display: flex;
+    flex: 0 0 auto;
+    flex-flow: row wrap;
+    align-items: center;
+    margin-bottom: 0;  }
+
+    .form-group {         
+      background: white;
+      border-radius: 12px; 
+      -webkit-box-shadow: 0 0 0px 1000px white inset; 
+      box-shadow: 0 0 0px 1000px white inset;        
+    }
+      input::-webkit-input-placeholder {
+          color: rgba(158, 158, 158, 0.568) !important;
+      }
+
+      input:-moz-placeholder {
+          /* Firefox 18- */
+          color: rgba(158, 158, 158, 0.568) !important;
+      }
+
+      input::-moz-placeholder {
+          /* Firefox 19+ */
+          color: rgba(158, 158, 158, 0.568) !important;
+      }
+
+      input:-ms-input-placeholder {
+          color: rgba(158, 158, 158, 0.568) !important;
+      }
+      .my-form-field {
+        bottom: 6.5px;
+    }
+    

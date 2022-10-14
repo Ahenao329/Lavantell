@@ -113,6 +113,16 @@
     color: white;
     font-weight: normal;
     margin-left: 37px;
+    text-align: center;
+    margin-left: -30%;
+}
+
+@media screen and (max-width: 628px)  {
+  
+  h1{
+
+    margin-left: -30%;
+}
 }
 
 i{
@@ -120,7 +130,7 @@ i{
     color: var(--color-secundario);
 }
 
-h2{
+h4{
   color: var(--color-background);
 
 }
@@ -146,3 +156,10 @@ h2{
     border: solid   2px green !important;
   } */
 
+  .form-group {         
+    background: white;
+    border-radius: 12px; 
+        -webkit-box-shadow: 0 0 0px 1000px white inset; 
+                box-shadow: 0 0 0px 1000px white inset;              
+      
+    }

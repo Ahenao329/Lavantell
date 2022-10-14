@@ -33,6 +33,11 @@
 .nav-link:focus {
   color:var(--color-secundario);
 }
+button{
+  background-color:var(--color-secundario);
+  width: 100%;
+
+}
 .navbar-brand:focus {
   color:white;
 }
@@ -55,3 +60,4 @@ a:hover{
     color:var(--color-secundario);
     background-size: 50% 2px;
 }
+

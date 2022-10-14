@@ -1,34 +1,41 @@
 <div *ngIf="!load">
     <app-spinner></app-spinner>
     </div>
-    <div *ngIf="load">
-        
-        <div class="container login-auth-page" [@routerTransition]>
-<mat-card class=" login-auth-page bg-secondary">
-    <a class="navbar-brand " routerLink="/inicio" >
-       <h1> <i class="uil uil-water">&nbsp;</i>Lavantell🧼
+    <div *ngIf="load">       
+<div class="container login-auth-page mt-5" [@routerTransition]>
+ <mat-card class=" login-auth-page bg-secondary mt-5">
+    <a class="navbar-brand mt-5" routerLink="/inicio" >
+       <h1> <i class="uil uil-water mt-5">&nbsp;</i>Lavantell🧼
         <i class="uil uil-water"></i>
     </h1>
     </a>
-    <mat-card-title class="mt-5"> <h2>Inicio de sesión</h2> </mat-card-title>
+    <mat-card-title class="mt-5"> <h4>Inicio de sesión</h4> </mat-card-title>
     <mat-card-content>
-        <form [formGroup]="formLogin" (ngSubmit)="login()">
-
-        <p>
-            <mat-form-field class="input">
+        <form [formGroup]="formLogin" novalidate (ngSubmit)="login()">
+        <p>    
+            <mat-form-field class="input"  >
                 <input clas="input" type="text"  formControlName="email"  matInput placeholder="Email"> 
-                <!-- <mat-error *ngIf="formLogin.hasError('email') && !formLogin.hasError('required')">
-                    Please enter a valid email address
-                  </mat-error>             -->
+                  <mat-error *ngFor="let validation of errors.emailSeguridad">
+                    <mat-error class="error-message"
+                    *ngIf="formLogin.get('email').hasError(validation.type) && (formLogin.get('email').dirty || formLogin.get('email').touched)">
+                    {{validation.message}}
+                        </mat-error>
+                </mat-error>
             </mat-form-field>
         </p>
-        <p>
+         <p>
             <mat-form-field>
                 <input type="password" formControlName="password"  matInput placeholder="Contraseña"> 
+                <mat-error *ngFor="let validation of errors.Requerido50">
+                    <mat-error class="error-message"
+                        *ngIf="formLogin.get('password').hasError(validation.type) && (formLogin.get('password').dirty || formLogin.get('password').touched)">
+                        {{validation.message}}
+                    </mat-error>
+                </mat-error>
             </mat-form-field>
         </p>
         <div>
-            <button type="submit" butt [disabled]="!formLogin.valid"  (click)="login()" mat-raised-button mat-button> Iniciar Sesión</button>
+            <button class="" type="submit" [disabled]="formLogin.invalid"   (click)="login()" mat-raised-button mat-button> Iniciar Sesión</button>
         </div>
     </form>
     </mat-card-content>

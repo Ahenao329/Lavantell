@@ -19,3 +19,20 @@ input.ng-invalid.ng-touched{
 input.ng-valid.ng-touched{
     border: solid   2px green !important;
 }
+
+@media screen and (max-width: 741px) {
+    .s{
+        /* margin: 10px 3px 30px 5px; */
+        margin: 10px 10% 90% 10%;
+        /* margin-left: 10%; */
+
+    }
+}
+
+@media screen and (max-width: 441px) {
+    .s{
+        /* margin: 10px 3px 30px 5px; */
+        margin: 10px 3px 100% 5px;
+        margin-left: 20%;
+    }
+}
