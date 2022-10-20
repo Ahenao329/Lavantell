@@ -19,6 +19,8 @@ import { OrderListPipe } from './pipe/order-list.pipe';
 import { SearchComponent } from './components/search/search.component';
 import { FormsModule } from '@angular/forms';
 import { FilterPipePipe } from './pipe/filter-pipe.pipe';
+import { DialogDeleteComponent } from './components/popup-delete/dialogdelete.component';
+import {MatDialogModule} from '@angular/material/dialog';
 
 
 
@@ -32,7 +34,9 @@ import { FilterPipePipe } from './pipe/filter-pipe.pipe';
     DynamicPipe,
     OrderListPipe,
     SearchComponent,
-    FilterPipePipe
+    FilterPipePipe,
+    DialogDeleteComponent,
+
   ],
   imports: [
     RecaptchaV3Module,
@@ -47,6 +51,7 @@ import { FilterPipePipe } from './pipe/filter-pipe.pipe';
     MatIconModule,
     MatDividerModule,
     FormsModule,
+    MatDialogModule,
 
 
     ],
@@ -59,6 +64,8 @@ import { FilterPipePipe } from './pipe/filter-pipe.pipe';
     OrderListPipe,
     SearchComponent,
     FilterPipePipe,
+    DialogDeleteComponent,
+
     ],
     providers: [
       {

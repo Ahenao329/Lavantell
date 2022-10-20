@@ -7,7 +7,7 @@ import { SucursalesModel } from '@core/models/sucursales.model';
 })
 export class OrderListPipe implements PipeTransform {
 
-  transform(value:Array<any>, args: string | null = null, sort: string = 'asc'): SucursalesModel[]{
+  transform(value:Array<any>, args: string | null = null, sort: string = 'asc'): any[]{
 try{
   if(args==null){
     return value

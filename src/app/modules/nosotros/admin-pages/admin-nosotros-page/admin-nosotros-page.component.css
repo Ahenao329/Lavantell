@@ -100,15 +100,6 @@ section{
     padding: 0 0 0 0;
   
   }
-  
-}
-
-@media screen and  (max-width: 841px){
-  .pull-right{
-    padding: 0 0 0 0;
-    /* width: 15rem; */
-
-  }
   .search-component input {
     border: 0;
     border-radius: 3rem;
@@ -118,3 +109,4 @@ section{
     font-size: 90%;
   } 
 }
+

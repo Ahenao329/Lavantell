@@ -3,7 +3,6 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Response } from '@core/models/response';
-import { SucursalesModel } from '@core/models/sucursales.model';
 
 const httpOption = {
   headers: new HttpHeaders({
@@ -19,19 +18,13 @@ private readonly URL = environment.api
   constructor(private http: HttpClient) { }
 
 
-
-
-  // getSucursales():Observable<any>  {
-  //   return this.http.get(`${this.URL}/sucursales`)
-  // }
-
   getSucursales():Observable<Response>  {
     return this.http.get<Response>(`${this.URL}/sucursales`)
   }
   
-  getSucursales2(term: string):Observable<Response>  {
-    return this.http.get<Response>(`${this.URL}/sucursales?src=${term}`)
-  }
+  // getSucursales2(term: string):Observable<Response>  {
+  //   return this.http.get<Response>(`${this.URL}/sucursales?src=${term}`)
+  // }
 
   deleteSucursales(id:number): Observable<any>
   {
@@ -42,18 +35,22 @@ private readonly URL = environment.api
     return this.http.post(`${this.URL}/sucursales/`, sucursal)
   }
 
-  add(sucursal: SucursalesModel): Observable<Response>{
-    return this.http.post<Response>(`${this.URL}/sucursales/`, sucursal, httpOption);
-  }
-
-  // updateSucursales(id: number, sucursal: any){
-  //   return this.http.put(`${this.URL}/sucursales/` + id, sucursal)
-  // }
   updateSucursales(id: number, sucursal: any): Observable<Response>{
     return this.http.put<Response>(`${this.URL}/sucursales/` + id, sucursal, httpOption)
   }
 
-  edit(sucursal: SucursalesModel): Observable<Response>{
-    return this.http.put<Response>(`${this.URL}/sucursales/`, sucursal, httpOption);
-  }
+  // add(sucursal: SucursalesModel): Observable<Response>{
+  //   return this.http.post<Response>(`${this.URL}/sucursales/`, sucursal, httpOption);
+  // }
+
+
+
+
+  // edit(sucursal: SucursalesModel): Observable<Response>{
+  //   return this.http.put<Response>(`${this.URL}/sucursales/`, sucursal, httpOption);
+  // }
+
+  // delete(id: number): Observable<Response>{
+  //   return this.http.delete<Response>(`${this.URL}/${id}`);
+  // }
 }

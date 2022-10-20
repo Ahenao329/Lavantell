@@ -9,6 +9,7 @@ import { routerTransition, slideInAnimation } from 'src/app/app.animation';
 import { AdminPopupSucursalesPageComponent } from '../admin-popup-sucursales-page/admin-popup-sucursales-page.component';
 import { DynamicPipe } from '@shared/components/grid/dynamic.pipes';
 import { Observable, of } from 'rxjs';
+import { DialogDeleteComponent } from '@shared/components/popup-delete/dialogdelete.component';
 
 @Component({
   selector: 'app-admin-sucursales-page',
@@ -40,7 +41,7 @@ export class AdminSucursalesPageComponent implements OnInit {
   readonly height: string = '400px'; 
   filterPost= '';
 
-  constructor( private fb: FormBuilder,
+  constructor( 
     private _sucursalesService: SucursalesService,
                public dialog: MatDialog,
                public snackBar: MatSnackBar) { 
@@ -106,6 +107,13 @@ export class AdminSucursalesPageComponent implements OnInit {
   
 
 eliminarSucursal(id: number ){
+  const dialogRef = this.dialog.open(DialogDeleteComponent,{
+    width: '500px',
+  });
+  
+  dialogRef.afterClosed().subscribe(result => {
+    if(result){
+
   this._sucursalesService.deleteSucursales(id).subscribe(data =>{
      this.obtenerSucursales();
      this.snackBar.open('La sucursal fue eliminada con éxito!','🤘',{
@@ -116,7 +124,10 @@ eliminarSucursal(id: number ){
     this.snackBar.open('ERROR al intentar eliminar la sucursal, consulte con el administrador!','🔴🔴',{
       duration: 2000
     });
-  })
+  });
+}
+});
+
 }
 
     openAdd(){
@@ -175,16 +186,16 @@ eliminarSucursal(id: number ){
       }
 
 
-      recivieData(event: string): void{
-        console.log('estoy en el padre jua🔴🐷🐷', event);
-        this._sucursalesService.getSucursales2(event)
-        .subscribe(response => {
-           this.data = response.data;
-           console.log('🔴👉', this.data);
+      // recivieData(event: string): void{
+      //   console.log('estoy en el padre jua🔴🐷🐷', event);
+      //   this._sucursalesService.getSucursales2(event)
+      //   .subscribe(response => {
+      //      this.data = response.data;
+      //      console.log('🔴👉', this.data);
            
-        }, error => {
-          console.log(error);
-        }
-        )
-      }
+      //   }, error => {
+      //     console.log(error);
+      //   }
+      //   )
+      // }
 }

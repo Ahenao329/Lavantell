@@ -60,3 +60,9 @@ i{
 .sociales-metodo i:hover{
     transform: translateY(-20px);
 }
+
+@media screen and (max-width: 641px){
+    .sociales-metodo{
+        display: none;
+    }
+}

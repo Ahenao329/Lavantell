@@ -1,0 +1,77 @@
+<section class="ibox">
+    <div class="container mt-5 md-flex s" [@routerTransition]>
+      <div class="row">
+        <div class="col-6">
+       <h5 class="titulo text-start"> <i class="uil uil-clipboard-alt"></i> Listado de  Quíenes Somos </h5>
+      </div>  
+      <div class="col-6 justify-content-end">
+             <div class="ibox-title mt-5  ">
+                <div class="pull-right" style="margin-top: -30px;" >
+                  <button type="button" class="btn btn-primary btnListado btn-sm ju " (click)="openAdd()" style="margin-top: -15px;">
+                    <i class="uil uil-plus"></i>
+                                         Agregar
+                   </button>
+                </div>
+           </div>
+          </div>
+        </div>
+          <div class="ibox-content">
+            <div class="row m-b-sm m-t-sm ">
+  
+              <div class="col-md-12 justify-content-center ">
+        
+                <div class="input-group mb-2" *ngIf="showSearchControl">
+
+                  <div class="search-component">
+                    <input type="text" placeholder="Search.." [(ngModel)]="filterPost">
+                    <br>
+                </div>
+
+                  <span class="input-group-btn">
+                    <button type="button" class="btn  btn-primary  btn-sm " (click)="clearSearch()">
+                      <i class="uil uil-sync"></i>
+                    </button>
+                  </span>
+                </div>
+  
+              </div>
+        
+            </div>     
+           
+      <div class="table-responsive">
+          <table class="table table-dark table-striped">
+                        <thead>
+                           <tr>
+                              <th style="width: 5%;" class="text-center">#</th>
+                               <th *ngFor="let f of fields" (click)="changeSort('f.display')">{{f.display}}</th>
+                               <th style="width: 5%;" class="text-center">Acciones</th>
+                              </tr>
+                             </thead>
+                             <tbody >
+                                <tr *ngFor="let d of data | filterPipe: filterPost  | orderList:optionSort.property:optionSort.order ; let i = index">
+                                   <td class="text-center">{{1 + i}}</td>
+  
+                                 <td *ngFor="let f of fields">
+                                    
+                                    <div *ngIf="f.link">
+                                       <div *ngIf="(f.formatter && f.formatter.length > 0)">
+                                        <a class="" (click)="openEdit(d)">
+                                           <span [innerHtml]="">  {{d.descripcion }}   </span><!--El datto 1 se lo pasamos a al pipe-->
+                                       </a>                
+                                        </div>
+                                      </div>
+                                  <!-- <div *ngIf="( f.name == 'imagen')">
+                                          <span class="text-navy" (click)="openEdit(d)">{{d.imagen}}</span>
+                                        </div> -->
+                                      </td>
+                                     <td> <button mat-raised-button class="bg-light" (click)="eliminarNosotros(d.id)">
+                                        <i   class="uil uil-trash-alt text-danger"></i>
+                                     </button></td>
+                                     </tr>
+                                  
+                           </tbody>
+           </table>
+          </div>
+        </div>
+      </div>
+    </section>
