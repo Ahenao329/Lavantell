@@ -38,7 +38,6 @@ export class ContactanosPageComponent implements OnInit {
                         Validators.minLength(10),
                         Validators.maxLength(10),
                         Validators.pattern(regExps['Telefono'])
-
                       ])],
         correo: ['',Validators.compose([
                           Validators.required, 
@@ -56,6 +55,7 @@ export class ContactanosPageComponent implements OnInit {
                       Validators.maxLength(500)])],
         recaptchaReactive: ['', Validators.required]
       })
+      console.log('🧼🧼', this.form)
     }
 
   ngOnInit(): void {

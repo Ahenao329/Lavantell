@@ -39,7 +39,7 @@ export class LoginPagesComponent implements OnInit {
   ])],
       password: ['', Validators.compose([
         Validators.required,
-        Validators.maxLength(50),
+        Validators.maxLength(15),
     ])]
       });
   }

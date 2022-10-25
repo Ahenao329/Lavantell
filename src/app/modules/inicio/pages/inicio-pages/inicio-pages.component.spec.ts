@@ -1,4 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { routerTransition } from 'src/app/app.animation';
 
 import { InicioPagesComponent } from './inicio-pages.component';
 
@@ -8,7 +10,9 @@ describe('InicioPagesComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ InicioPagesComponent ]
+      declarations: [ InicioPagesComponent,
+        ],
+        imports:[BrowserAnimationsModule]
     })
     .compileComponents();
 

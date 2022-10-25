@@ -36,7 +36,7 @@ export class AdminSucursalesPageComponent implements OnInit {
 
   @Input() data: Array<SucursalesModel> = [];
   listResults$: Observable<any> = of ([]);
-  public columnas: string[] =['id', 'nombre', 'actions'];
+  // public columnas: string[] =['id', 'nombre', 'actions'];
   readonly width: string = '800px';
   readonly height: string = '400px'; 
   filterPost= '';

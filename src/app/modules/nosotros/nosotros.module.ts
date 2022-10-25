@@ -16,6 +16,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { FilterPipePipe } from './pipes/filter-pipe.pipe';
+import { PruebasComponent } from './admin-pages/pruebas/pruebas.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { FilterPipePipe } from './pipes/filter-pipe.pipe';
     AdminPopupNosotrosPageComponent,
     AdminNosotrosPageComponent,
     FilterPipePipe,
+    PruebasComponent,
   ],
   imports: [
     CommonModule,

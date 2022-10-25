@@ -1,0 +1,35 @@
+{
+    "data": [{
+        "_id": 1,
+        "nombre": "Bello Lavado",        
+        "telefono": "313444333",
+        "direccion": "calle 30 - 50",
+        "horario": "8 - 5 PM",
+        "administrador": "Juan Daniel"
+    },
+     {
+        "_id": 2,
+        "nombre": "Bogo Bonito",
+        "telefono": "3235155552",
+        "direccion": "calle 40 # 50",
+        "horario": "8 - 5 PM",
+        "administrador": "Sandra Morales"
+    },  
+     {
+        "_id": 3,
+        "nombre": "Clena Medallo",
+        "telefono": "30192923323",
+        "direccion": "Carrera 40 # 50",
+        "horario": "8 - 5 PM",
+        "administrador": "Luis Muñoz"
+    }, 
+     {
+        "_id": 4,
+        "nombre": "Los Santos Lavados",
+        "telefono": "3235155552",
+        "direccion": "calle 40 # 50",
+        "horario": "8 - 5 PM",
+        "administrador": "Gloria Perez"
+    }]
+
+}

@@ -16,7 +16,6 @@ const httpOption = {
   providedIn: 'root'
 })
 export class LoginService {
-  // url: string = 'https://localhost:44343/api/User/login';
   url: string = 'https://lavantell.azurewebsites.net/api/User/login';
   token = ''
 

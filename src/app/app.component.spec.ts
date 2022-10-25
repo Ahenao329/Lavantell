@@ -26,10 +26,5 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('lavantell');
   });
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('lavantell app is running!');
-  });
+
 });
