@@ -1,0 +1,56 @@
+{
+    "data": [{
+        "id": 1,
+        "nombre": "Bello Lavado",        
+        "cargo": "313444333",
+        "foto": "https://img.freepik.com/foto-gratis/retrato-apuesto-hombre-macho-corte-pelo-elegante-que-toca-mandibula-limpia-afeitada-mira-camara-pensativa-pensando-considerar-tomar-decision-ponderando-decision-fondo-blanco_176420-54775.jpg?w=1060&t=st=1666900606~exp=1666901206~hmac=27e999d177b465551922796640497f8d89a738162b5e9843a29534de263fd295",
+        "facebok": "calle 30 - 50",
+        "Instagram": "8 - 5 PM",
+        "twitter": "Juan Daniel"
+    },
+     {
+        "id": 2,
+        "nombre": "Bello Lavado",        
+        "cargo": "313444333",
+        "foto": "https://img.freepik.com/foto-gratis/retrato-hermoso-mujer-joven-posicion-pared-gris_231208-10760.jpg?w=1060&t=st=1666908438~exp=1666909038~hmac=d85d6f856b85b4cfd1756e3a1e67912893b037c3005ef8e31dd06ce2a54bb392",
+        "facebok": "calle 30 - 50",
+        "Instagram": "8 - 5 PM",
+        "twitter": "Juan Daniel"
+    },  
+    {
+        "id": 3,
+        "nombre": "Bello Lavado",        
+        "cargo": "313444333",
+        "foto": "https://img.freepik.com/foto-gratis/alegre-mujer-mediana-edad-cabello-rizado_1262-20859.jpg?w=1060&t=st=1666908371~exp=1666908971~hmac=6645973141146ed74c8f8ad0b472c51ef1829d6748f920952125f8019983a348",
+        "facebok": "calle 30 - 50",
+        "Instagram": "8 - 5 PM",
+        "twitter": "Juan Daniel"
+    },    {
+        "id": 4,
+        "nombre": "Bello Lavado",        
+        "cargo": "313444333",
+        "foto": "https://img.freepik.com/foto-gratis/hombre-sonriente-tiro-medio-carrito-limpieza_23-2149345546.jpg?w=1060&t=st=1666900554~exp=1666901154~hmac=77d0b537efe7be71fd61fce3df5524f803ed9d66d9c4fc70f3d7ba9a626c88f4",
+        "facebok": "calle 30 - 50",
+        "Instagram": "8 - 5 PM",
+        "twitter": "Juan Daniel"
+    },    {
+        "id": 5,
+        "nombre": "Bello Lavado",        
+        "cargo": "313444333",
+        "foto": "https://img.freepik.com/foto-gratis/atractiva-chica-pelo-rizado-raza-mixta-hipster-elegante-traje-mano-cintura-segura-entusiasta-sonriendo-satisfecho-seguro-si-mismo-mujer-dando-conferencia-feminismo-poder-mujeres-fondo-blanco_176420-34884.jpg?w=1060&t=st=1666908471~exp=1666909071~hmac=b72bceacfa479d9598b4264c72afa6647e8c40bdb29f55124e1721ca974cb7bd",
+        "facebok": "calle 30 - 50",
+        "Instagram": "8 - 5 PM",
+        "twitter": "Juan Daniel"
+    },    
+     {
+        "id": 6,
+        "nombre": "Bello Lavado",        
+        "cargo": "313444333",
+        "foto": "https://img.freepik.com/foto-gratis/feliz-joven_1098-20869.jpg?w=1060&t=st=1666900198~exp=1666900798~hmac=dc2edd5fd9c6afa742e674001e9b81c852debd9030166a04e093c4e032a30928",
+        "facebok": "calle 30 - 50",
+        "Instagram": "8 - 5 PM",
+        "twitter": "Juan Daniel"
+    }
+]
+
+}

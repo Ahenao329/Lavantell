@@ -5,6 +5,7 @@ import { NosotrosModel } from '@core/models/nosotros.model';
 import { NosotrosService } from '@modules/nosotros/services/nosotros.service';
 import { DialogDeleteComponent } from '@shared/components/popup-delete/dialogdelete.component';
 import { routerTransition, slideInAnimation } from 'src/app/app.animation';
+import { environment } from 'src/environments/environment';
 import { AdminPopupNosotrosPageComponent } from '../admin-popup-nosotros-page/admin-popup-nosotros-page.component';
 @Component({
   selector: 'app-admin-nosotros-page',
@@ -16,8 +17,9 @@ import { AdminPopupNosotrosPageComponent } from '../admin-popup-nosotros-page/ad
 export class AdminNosotrosPageComponent implements OnInit {
   readonly width: string = '800px';
   readonly height: string = '400px'; 
+  azureStorageBaseUrl = environment.azureStorageBaseUrl;
   @Input('showSearchControl') showSearchControl: boolean = true;  
-  data: Array<NosotrosModel> = [];
+  data: NosotrosModel[] = [];
   filterPost= '';
   optionSort: {property: string | null, order: string} = {property: null, order: 'asc'}
   public fields: Array<any> =[];
@@ -38,6 +40,14 @@ export class AdminNosotrosPageComponent implements OnInit {
             allowSorting: true,
             formatter: '1'
         },
+        {
+          name: 'imagen',
+          display: 'Imagen',
+          align: 1,
+          link: false,
+          allowSorting: true,
+          formatter: '1'
+      },
     ];
 
   }
@@ -74,14 +84,14 @@ export class AdminNosotrosPageComponent implements OnInit {
     this.filterPost= '';
       }
 
-      changeSort(property: string): void {
+  changeSort(property: string): void {
         const {order} = this.optionSort
         this.optionSort = {
           property,
           order: order == 'asc' ? 'desc': 'asc'
         }
         console.log(this.optionSort)
-      }
+  }
 
       
     openEdit(nosotros: NosotrosModel){

@@ -5,7 +5,8 @@
 export const environment = {
   production: false,
   // api: 'https://localhost:44343/api'
-  api: 'https://lavantell.azurewebsites.net/api'
+  api: 'https://lavantell.azurewebsites.net/api',  
+  azureStorageBaseUrl: "https://lavantell.blob.core.windows.net"
 
 };
 

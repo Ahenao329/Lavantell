@@ -21,6 +21,8 @@ import { FormsModule } from '@angular/forms';
 import { FilterPipePipe } from './pipe/filter-pipe.pipe';
 import { DialogDeleteComponent } from './components/popup-delete/dialogdelete.component';
 import {MatDialogModule} from '@angular/material/dialog';
+import { SectionGenericComponent } from './components/section-generic/section-generic.component';
+import { CardPlayerComponent } from './components/card-player/card-player.component';
 
 
 
@@ -36,6 +38,8 @@ import {MatDialogModule} from '@angular/material/dialog';
     SearchComponent,
     FilterPipePipe,
     DialogDeleteComponent,
+    SectionGenericComponent,
+    CardPlayerComponent,
 
   ],
   imports: [
@@ -65,6 +69,7 @@ import {MatDialogModule} from '@angular/material/dialog';
     SearchComponent,
     FilterPipePipe,
     DialogDeleteComponent,
+    SectionGenericComponent
 
     ],
     providers: [

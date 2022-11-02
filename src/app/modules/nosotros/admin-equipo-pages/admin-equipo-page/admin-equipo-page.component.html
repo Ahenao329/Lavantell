@@ -2,15 +2,13 @@
     <div class="container mt-5 md-flex s" [@routerTransition]>
       <div class="row">
         <div class="col-6">
-       <h5 class="titulo text-start"> <i class="uil uil-clipboard-alt"></i> Listado de  Quíenes Somos </h5>
+       <h5 class="titulo text-start"> <i class="uil uil-clipboard-alt"></i> Listado de miembros </h5>
       </div>  
       <div class="col-6 justify-content-end">
              <div class="ibox-title mt-5  ">
                 <div class="pull-right" style="margin-top: -30px;" >
                   <button type="button" class="btn btn-primary btnListado btn-sm ju " (click)="openAdd()" style="margin-top: -15px;">
-                    <i class="uil uil-plus"></i>
-                                         Agregar
-                   </button>
+                    <i class="uil uil-plus"></i> Agregar</button>
                 </div>
            </div>
           </div>
@@ -48,7 +46,8 @@
                               </tr>
                              </thead>
                              <tbody >
-                                <tr *ngFor="let d of data | filterPipe: filterPost  | orderList:optionSort.property:optionSort.order ; let i = index">
+                               <!-- <tr *ngFor="let d of listEquipo | filterPipe: filterPost  | orderList:optionSort.property:optionSort.order ; let i = index"> -->
+                                <tr *ngFor="let d of listEquipo  | orderList:optionSort.property:optionSort.order ; let i = index">
                                    <td class="text-center">{{1 + i}}</td>
   
                                  <td *ngFor="let f of fields">
@@ -56,16 +55,20 @@
                                     <div *ngIf="f.link">
                                        <div *ngIf="(f.formatter && f.formatter.length > 0)">
                                         <a class="" (click)="openEdit(d)">
-                                           <span [innerHtml]="">  {{d.descripcion }}   </span><!--El datto 1 se lo pasamos a al pipe-->
+                                           <span [innerHtml]="">  {{d.nombre }}   </span><!--El datto 1 se lo pasamos a al pipe-->
                                        </a>                
-                                        </div>
-                                      </div>
-                                      <div style="text-align: center;" *ngIf="( f.name == 'imagen')">
-                                        <img src="{{azureStorageBaseUrl}}/images/{{f.imagen}}" style="max-height: 50px;" *ngIf="f.imagen" />
-                                      </div>
-                                  <!-- <div *ngIf="( f.name == 'imagen')">
-                                          <span class="text-navy" (click)="openEdit(d)">{{d.imagen}}</span>
-                                        </div> -->
+                                    </div>
+                                   </div>
+                                    <div *ngIf="( f.name == 'cargo')">
+                                      <span class="text-navy" (click)="openEdit(d)">{{d.cargo}}  </span>
+                                    </div>
+                                    <div style="text-align: center;" *ngIf="( f.name == 'foto')">
+                                        <img src="{{azureStorageBaseUrl}}/photos/{{f.foto}}" style="max-height: 50px;" *ngIf="f.foto" />
+                                    </div>
+                                      <div *ngIf="( f.name == 'foto')">
+                                          <span class="text-navy" (click)="openEdit(d)">{{d.foto}}</span>
+                                          <img src="{{azureStorageBaseUrl}}/photos/{{f.foto}}" style="max-height: 50px;" *ngIf="f.foto" />
+                                        </div> 
                                       </td>
                                      <td> <button mat-raised-button class="bg-light" (click)="eliminarNosotros(d.id)">
                                         <i   class="uil uil-trash-alt text-danger"></i>

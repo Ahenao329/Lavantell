@@ -16,22 +16,37 @@
         </mat-form-field>
     </div>
         <div class="col-sm-6 col-xs-12">    
-        <mat-form-field class="input"  >
-            <input clas="input" type="text"  formControlName="imagen"  matInput placeholder="Imagen" maxlength="5000"> 
-              <mat-error *ngFor="let validation of errors.Telefono">
-                <mat-error class="error-message"
-                *ngIf="formLogin.get('imagen').hasError(validation.type) && (formLogin.get('imagen').dirty || formLogin.get('imagen').touched)">
-                {{validation.message}}
-                    </mat-error>
-            </mat-error>
-        </mat-form-field>
+            <!-- <mat-form-field class="input"  >
+                <input clas="input" type="text"  formControlName="imagen"  matInput placeholder="Imagen" maxlength="5000"> 
+                  <mat-error *ngFor="let validation of errors.Telefono">
+                    <mat-error class="error-message"
+                    *ngIf="formLogin.get('imagen').hasError(validation.type) && (formLogin.get('imagen').dirty || formLogin.get('imagen').touched)">
+                    {{validation.message}}
+                        </mat-error>
+                </mat-error>
+            </mat-form-field> -->
+ 
+        <div>
+            <button mat-raised-button [disabled]="false" type="button" class="btn rounded-btn btnTerciario"
+            (click)="fileUpload.click()" >Agregar archivo *</button>
+             <!-- <span *ngIf="nombreIcono" class="material-icons">{{nombreIcono}}</span>  -->
+        </div>
+        <div class="mt-2" style="display: none;">
+            <input type='file' id='input'  (change)="compress($event)" #fileUpload>
+        </div>           
+         <div >
+            <input (change)="compress($event)" type='file'>
+        </div>
+        <div class="">
+            <img width="100px" [src]="previsualizacion" alt="">
+        </div>
     </div>
     </div>
     </div>
     
     <div class="row justify-content-center">
     <div mat-dialog-actions  class="col-md-12 justify-content-center text-center">
-        <button mat-raised-button (click)="close()" routerLink="/private/nosotros">Cancelar</button>
+        <button mat-raised-button (click)="close()"  [mat-dialog-close]="false" routerLink="/private/nosotros">Cancelar</button>
         <button mat-raised-button color="primary" 
         type="submit" [disabled]="!formLogin.valid"> Guardar</button>
     </div> 

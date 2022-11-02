@@ -4,7 +4,7 @@
 <section id="menu-productos" [@routerTransition]>
     <div calss="contenedor-principal">
     <div class="container-fluid  text-center">
-        <div class="slider">
+        <div class="slider card-body">
         <div class="row container-productos no-gutters">
             <div class="col-12  descripcion-productos" *ngFor="let nosotros of listNosotros; let i = index">
                 <h1>Quiénes somos</h1>
@@ -17,6 +17,9 @@
          </div>
      </div>
     </div>
+    <app-section-generic class="ss" [data]="listEquipo" [mode]="'big'" [title]="'Nuestro equipo'"></app-section-generic>
+    <!-- <app-section-generic [data]="dataEquipo" [mode]="'small'" [title]="'Nuestro equipo'"></app-section-generic> -->
 </section> 
 
+<!-- <app-section-generic [data]="dataEquipo" [mode]="'big'" [title]="'Nuestro equipo'"></app-section-generic> -->
 

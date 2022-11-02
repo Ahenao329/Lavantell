@@ -1,0 +1,33 @@
+<!-- <div class="container section--generic">
+    <h1 class="section--generic__title">{{title}}</h1> -->
+
+    <!-- <div class="section--generic__player--zone">
+        <ul class="player--list" [ngClass]="{'card-small':mode === 'small','card-big':mode === 'big'}">
+            <li *ngFor="let data of data">
+              <app-card-player [equipo]="data" [mode]="mode"></app-card-player>
+            </li>
+        </ul>
+    </div> -->
+<!-- </div> -->
+<br>
+<section>
+<div class="container mt-5 md-flex section--generic">
+<div class="row mt-4 mt-5"  >
+    <div class="col-lg-8 offset-lg-2">
+        <div class="container section--generic">
+    <h1 class="section--generic__title mt-4">{{title}}</h1>
+
+    <!-- <div class="row mt-4 mt-5 section--generic__player--zone"> -->
+        <div class="row mt-4 mt-5 section--generic__player--zone">
+            <ul class="player--list col-12 col-md-6 col-lg-4" [ngClass]="{'card-small':mode === 'small','card-big':mode === 'big'}">
+            <li *ngFor="let data of data"> <!-- /*la  lista, de que salgan esas tarjetas*/ -->
+              <app-card-player [equipo]="data" [mode]="mode"></app-card-player>
+              <!-- {{track | json}} -->
+            </li>
+        </ul>
+    </div>
+</div>
+</div>
+</div>
+</div>
+</section>

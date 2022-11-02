@@ -70,7 +70,7 @@
 
 <div class="row justify-content-center">
 <div mat-dialog-actions  class="col-md-12 justify-content-center text-center">
-    <button mat-raised-button (click)="close()" routerLink="/private/sucursales">Cancelar</button>
+    <button mat-raised-button (click)="close()" routerLink="/private/sucursales" [mat-dialog-close]="false">Cancelar</button>
     <button mat-raised-button color="primary" 
     type="submit" [disabled]="!formLogin.valid"> Guardar</button>
 </div> 

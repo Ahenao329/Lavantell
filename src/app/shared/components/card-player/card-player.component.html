@@ -1,0 +1,34 @@
+<!-- Diseño del mode (small)-->
+<div *ngIf="mode==='small'" class="card-player player-small">
+    <img [src]="equipo.foto" [alt]="equipo.nombre" class="cover">
+    <div class="content-player">
+        {{equipo.nombre}}
+    </div>
+    <div class="buttons-player">
+        <button *ngIf="true" class="play-btn">
+            <i class="uil " [ngClass]="{'uil-play':true}"></i>
+        </button>
+        <button *ngIf="false" class="play-btn">
+            <i class="uil uil-play"></i>
+        </button>
+    </div>
+</div>
+
+<!-- Diseño del mode (big)-->
+<div *ngIf="mode==='big'" class="card-player player-big">
+    <!-- <img appImgBroken [customImg]="'https://i.pinimg.com/originals/ee/fe/b0/eefeb0e19c52718b3263181c3f777ae3.jpg'" [src]="track.cover" alt="" class="cover"> -->
+    <!-- <img appImgBroken [src]="equipo.foto" alt="" class="cover"> -->
+    <img src="{{azureStorageBaseUrl}}/photos/{{equipo.foto}}" style="min-height: 80%; max-height: 80%;" *ngIf="equipo.foto" />
+    <div class="content-player">
+        <div class="title-track">{{equipo.nombre}}</div>
+        <div class="sub-title-track">{{equipo.nombre}}</div>
+    </div>
+    <div class="buttons-player">
+        <!-- <button (click)="sendPlay(equipo)" *ngIf="true" class="play-btn">
+            <i class="uil " [ngClass]="{'uil-play':true}"></i>
+        </button> -->
+        <button *ngIf="false" class="play-btn">
+            <i class="uil uil-play"></i>
+        </button>
+    </div>
+</div>

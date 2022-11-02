@@ -1,0 +1,104 @@
+<div class="section"> 
+    <h1 mat-dialog-title>{{equipos!= null ? 'Editar miembro': 'Nuevo miembro' }}</h1>
+    <hr />
+    <form [formGroup]="formLogin" novalidate (ngSubmit)="guardarEquipos()">
+    <div mat-dialog-content>
+        <div class="row">
+        <div class="col-sm-6 col-xs-12">    
+            <mat-form-field class="input"  >
+                <input clas="input" type="text"  formControlName="nombre"  matInput placeholder="Nombre" maxlength="30"> 
+                  <mat-error *ngFor="let validation of errors.Requerido">
+                    <mat-error class="error-message"
+                    *ngIf="formLogin.get('nombre').hasError(validation.type) && (formLogin.get('nombre').dirty || formLogin.get('nombre').touched)">
+                    {{validation.message}}
+                        </mat-error>
+                </mat-error>
+            </mat-form-field>
+        </div>
+            <div class="col-sm-6 col-xs-12">    
+            <mat-form-field class="input"  >
+                <input clas="input" type="text"  formControlName="cargo"  matInput placeholder="Cargo" maxlength="10"> 
+                  <mat-error *ngFor="let validation of errors.Telefono">
+                    <mat-error class="error-message"
+                    *ngIf="formLogin.get('cargo').hasError(validation.type) && (formLogin.get('cargo').dirty || formLogin.get('cargo').touched)">
+                    {{validation.message}}
+                        </mat-error>
+                </mat-error>
+            </mat-form-field>
+        </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-sm-6 col-xs-12">   
+            <mat-form-field class="input"  >
+                <input clas="input" type="text"  formControlName="facebook"  matInput placeholder="Facebook" maxlength="150"> 
+                  <mat-error *ngFor="let validation of errors.Telefono">
+                    <mat-error class="error-message"
+                    *ngIf="formLogin.get('facebook').hasError(validation.type) && (formLogin.get('facebook').dirty || formLogin.get('facebook').touched)">
+                    {{validation.message}}
+                        </mat-error>
+                </mat-error>
+            </mat-form-field>
+        </div>
+            <div class="col-sm-6 col-xs-12">   
+            <mat-form-field class="input"  >
+                <input clas="input" type="text"  formControlName="intagram"  matInput placeholder="Instagram" maxlength="30"> 
+                  <mat-error *ngFor="let validation of errors.Telefono">
+                    <mat-error class="error-message"
+                    *ngIf="formLogin.get('intagram').hasError(validation.type) && (formLogin.get('intagram').dirty || formLogin.get('intagram').touched)">
+                    {{validation.message}}
+                        </mat-error>
+                </mat-error>
+            </mat-form-field>
+        </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 col-xs-12">   
+            <mat-form-field class="input"  >
+                <input clas="input" type="text"  formControlName="twitter"  matInput placeholder="Twitter" maxlength="150"> 
+                  <mat-error *ngFor="let validation of errors.Telefono">
+                    <mat-error class="error-message"
+                    *ngIf="formLogin.get('twitter').hasError(validation.type) && (formLogin.get('twitter').dirty || formLogin.get('twitter').touched)">
+                    {{validation.message}}
+                        </mat-error>
+                </mat-error>
+            </mat-form-field>
+        </div>
+            <div class="col-sm-6 col-xs-12">   
+            <!-- <mat-form-field class="input"  >
+                <input clas="input" type="text"  formControlName="foto"  matInput placeholder="Foto" maxlength="30"> 
+                  <mat-error *ngFor="let validation of errors.Telefono">
+                    <mat-error class="error-message"
+                    *ngIf="formLogin.get('foto').hasError(validation.type) && (formLogin.get('foto').dirty || formLogin.get('foto').touched)">
+                    {{validation.message}}
+                        </mat-error>
+                </mat-error>
+            </mat-form-field> -->
+            <div>
+                <button mat-raised-button [disabled]="false" type="button" class="btn rounded-btn btnTerciario"
+                (click)="fileUpload.click()" >Agregar archivo *</button>
+                 <!-- <span *ngIf="nombreIcono" class="material-icons">{{nombreIcono}}</span>  -->
+            </div>
+            <div class="mt-2" style="display: none;">
+                <input type='file' id='input'  (change)="compress($event)" #fileUpload>
+            </div>    
+            <!-- <div >
+                <input (change)="compress($event)" type='file'>
+            </div> -->
+            <div class="">
+                <img width="100px" [src]="previsualizacion" alt="">
+            </div>
+        </div>
+        </div>
+    </div>    
+    <div class="row justify-content-center">
+    <div mat-dialog-actions  class="col-md-12 justify-content-center text-center">
+        <button mat-raised-button (click)="close()" [mat-dialog-close]="false" >Cancelar</button>
+        <button mat-raised-button color="primary" 
+        type="submit" [disabled]="!formLogin.valid"> Guardar</button>
+    </div> 
+    </div> 
+    </form>
+    </div>
+    
+    

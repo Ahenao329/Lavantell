@@ -63,17 +63,7 @@ if(this.sucursales !== null){
 }
 
   close() {
-  
-      this.id= 0
-      this.formLogin.patchValue({
-        nombre: null,
-        telefono: null,
-        direccion: null,
-        horario: null,
-        administrador: null
-      })
-    
-    this.dialogRef.close();
+      this.dialogRef.close();
 }
 
   ngOnInit(): void {
@@ -105,15 +95,15 @@ if(this.sucursales !== null){
       });
       this.formLogin.reset();
     }
-    // , 
-    // error => {
-    //   this.dialogRef.close();
-    //   this.snackBar.open('La sucursal no pudo ser guardada correctamente, consulte con el administrador, consulte con el administrador','🔴🔴',{
-    //     duration: 2000,
-    //     panelClass: ['blue-snackbar'],
+    , 
+    error => {
+      this.dialogRef.close();
+      this.snackBar.open('La sucursal no pudo ser guardada correctamente, consulte con el administrador, consulte con el administrador','🔴🔴',{
+        duration: 2000,
+        panelClass: ['blue-snackbar'],
 
-    //   });     
-    //  }
+      });     
+     }
      )
 }
 editSucursal(sucursal: SucursalesModel){
@@ -132,14 +122,14 @@ editSucursal(sucursal: SucursalesModel){
       });
       this.formLogin.reset();
     }
-    // , error => {
-    //   this.dialogRef.close();
-    //   this.snackBar.open('ERROR al intentar actualizar la sucursal, consulte con el administrador','🔴🔴',{
-    //     duration: 2000,
-    //     verticalPosition: 'bottom',
-    //     panelClass: ['warning']
-    //   });       
-    //  }
+    , error => {
+      this.dialogRef.close();
+      this.snackBar.open('ERROR al intentar actualizar la sucursal, consulte con el administrador','🔴🔴',{
+        duration: 2000,
+        verticalPosition: 'bottom',
+        panelClass: ['warning']
+      });       
+     }
      )
 }
 

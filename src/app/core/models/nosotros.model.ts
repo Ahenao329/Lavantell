@@ -3,3 +3,8 @@ export interface NosotrosModel{
     descripcion: string,
     imagen:string, 
 }
+
+export interface NosotrosRequest{
+    descripcionR: string,
+    imagenR:string, 
+}
