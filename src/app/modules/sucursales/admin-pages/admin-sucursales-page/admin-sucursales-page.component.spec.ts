@@ -7,6 +7,7 @@ import { FilterPipePipe } from '@shared/pipe/filter-pipe.pipe';
 import { OrderListPipe } from '@shared/pipe/order-list.pipe';
 
 import { AdminSucursalesPageComponent } from './admin-sucursales-page.component';
+import { HttpClient } from '@angular/common/http';
 
 describe('AdminSucursalesPageComponent', () => {
   let component: AdminSucursalesPageComponent;
@@ -16,7 +17,7 @@ describe('AdminSucursalesPageComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [ AdminSucursalesPageComponent,
                         OrderListPipe, 
-                        FilterPipePipe
+                        FilterPipePipe,
                     ],
       imports: [HttpClientTestingModule,        
         MatDialogModule,
@@ -37,6 +38,6 @@ describe('AdminSucursalesPageComponent', () => {
   });
 
   it('should create', () => {
-    expect(component).toBeTruthy();
+    expect(component).toBeTruthy(HttpClient);
   });
 });

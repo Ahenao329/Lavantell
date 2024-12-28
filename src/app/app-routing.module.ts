@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeprivateComponent } from '@modules/home-private/page/homeprivate/homeprivate.component';
 import { HomePagesComponent } from '@modules/home/pages/home-pages/home-pages.component';
-import { NosotrosPageComponent } from '@modules/nosotros/pages/nosotros-page/nosotros-page.component';
 import { AuthGuard } from './security/auth.guard';
 
 const routes: Routes = [
